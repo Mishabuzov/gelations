@@ -49,10 +49,16 @@ public class RunBestPrioritizer {
 		catch (IOException ex) {ex.printStackTrace(); System.exit(-1);}
 
 		// RunPrioritizer with best config
+                /*
 		String[] prioritizerArgs = {"1", "2", "3", "1", "1",
 				"0.1", "0.5", "75", "10000000000", "1.0",
 				"20000", "0", args[0], args[1], SEEDFILE_NAME,
-				args[2], "1"};  
+				args[2], "1"};
+                */
+                String[] prioritizerArgs = {"1", "2", "3", "6", "1",
+				"0.1", "0.5", "75", "10000000000", "1.0",
+				"20", "0", args[0], args[1], SEEDFILE_NAME,
+				args[2], "1"};
 		//InitDatafile.main(prioritizerArgs);
 		Configuration config = new Configuration(prioritizerArgs);
 		WriteResults.writeHeader(config);

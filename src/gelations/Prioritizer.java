@@ -192,11 +192,45 @@ public class Prioritizer {
 	      System.currentTimeMillis()-startTime < maxTime &&
 	      stagnancy < maxStag) {
 		*/
+
+        /*
+         *
+
 	// temporary condition: just do 400 generations
 	while(generations < 400) {
-		
+	
+         *
+         */
+        
+        /*
+        (kittens) >400 elephants if google eats puppies
+                 312768940985098>9987439784308754387090878700870808998
+                 ceiling cat vs. basement cat x5
+                 12}]]
+        */
+        
+        while(true) {
+
 	    generations++;
-			
+
+            //System.out.println("--debug: stag="+stagnancy+"; time="+(System.currentTimeMillis() - startTime)+"; fit="+bestFitness);
+
+            // check maxStag, break if exceeded
+            if (stagnancy > maxStag) {
+                break;
+            }
+
+            // check maxTime, break if exceeded
+            if ((System.currentTimeMillis() - startTime) > maxTime) {
+                break;
+            }
+
+            // check targetFitness, break if exceeded
+            if (bestFitness > targetFitness) {
+                break;
+            }
+
+            
 	    // make a copy of the current population
 	    lastPopulation = Population.copy(population);
 			
@@ -298,10 +332,10 @@ public class Prioritizer {
      *
      */
     public void writeResults() {
-	
-	WriteResults.toFile(config, bestIndividual, runTime, 
+
+	WriteResults.toFile(config, bestIndividual, runTime,
 			    repetition, generations);
-	
+
     }
     
     /**

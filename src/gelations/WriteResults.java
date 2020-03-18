@@ -8,8 +8,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.File;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 //import java.io.FileNotFoundException;
 
@@ -183,14 +185,17 @@ public class WriteResults {
 	    +reverseFitness+"\t"
 	    +randomIndividual.getStringRepresentation()+"\t"
 	    +randomFitness+"\t"+randomTime+"\n";
-		
+
+
+
 	try {
 			
 	    out = new BufferedWriter
 		(new FileWriter(config.getOutputFileName(),true));
 	    out.write(toFile);
+	    out.write(Arrays.toString(bestIndividual.getIntArrayRepresentation()));
 	    out.close();
-			
+
 	}
 	catch (IOException ex) {
 			
@@ -200,6 +205,14 @@ public class WriteResults {
 		
 		
     }
+
+//    public static void writeOrderToFile(String outputFileName, String order) {
+//    	try (BufferedWriter outWriter = new BufferedWriter(new FileWriter(outputFileName,true))) {
+//			outWriter.write(order);
+//		} catch (IOException ex) {
+//    		ex.printStackTrace();
+//		}
+//	}
 	
     public static void toFileStag(Configuration config, 
 				  int generations, 
