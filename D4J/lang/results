@@ -1,0 +1,1 @@
+datatype	dataset	crossover_operator	mutation_operator	selection_method	fitness_transform	mutation_rate	child_density	pop_size	max_time	target_fitness	max_stagnancy	metric	rep	order	fitness	runtime	generations	init_order	init_fitness	init_reverse_order	init_reverse_fitness	random_search_order	random_search_fitness	random_search_runtime
